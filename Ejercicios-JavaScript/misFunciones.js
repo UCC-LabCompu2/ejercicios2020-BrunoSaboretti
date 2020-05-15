@@ -38,12 +38,20 @@ function cambiarUnidades (id,valor) {
 function convertirGR(id) {
 var grad, rad;
   if(id=="grados"){
-      grad = document.getElementById(elementid: "grados").value;
+      grad = document.getElementById(elementId: "grados").value;
       rad = (grad*Math.PI)/180;
   }else if(id=="radianes"){
-      rad = document.getElementById(elementid "radianes").value;
+      rad = document.getElementById(elementId "radianes").value;
       grad = (rad*180)/Math.PI;
   }
-  document.getElementById(elementid "grados").value = grad;
-    document.getElementById(elementid "radianes").value = grad;
+  document.getElementById(elementId "grados").value = grad;
+    document.getElementById(elementId "radianes").value = grad;
+}
+function mostrar_ocultar(valorMO) {
+
+    if (valorMO=="val_mostrar"){
+    document.getElementById(elementId: "divMO").style.display = 'block';
+} else if (valorMO=="val_ocultar"){
+    document.getElementById(elementId: "divMO").style.display = 'none';
+}
 }
