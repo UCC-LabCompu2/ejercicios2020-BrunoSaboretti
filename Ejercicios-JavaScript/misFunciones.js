@@ -38,14 +38,14 @@ function cambiarUnidades (id,valor) {
 function convertirGR(id) {
 var grad, rad;
   if(id=="grados"){
-      grad = document.getElementById(elementId: "grados").value;
+      grad = document.getElementById("grados").value;
       rad = (grad*Math.PI)/180;
   }else if(id=="radianes"){
-      rad = document.getElementById(elementId "radianes").value;
+      rad = document.getElementById("radianes").value;
       grad = (rad*180)/Math.PI;
   }
-  document.getElementById(elementId "grados").value = grad;
-    document.getElementById(elementId "radianes").value = grad;
+  document.getElementById("grados").value = grad;
+    document.getElementById("radianes").value = grad;
 }
 function mostrar_ocultar(valorMO) {
 
@@ -80,5 +80,24 @@ function calcularDiv() {
     num1= Number (document.getElementsByName("div_num1")[0].value);
     num2= document.getElementsByName("div_num2")[0].value;
     document.getElementsByName("div_total")[0].value = num1 / Number(num2);
+
+}
+function cargarWeb() {
+var cant,unidad,urlComp;
+cant = document.getElementById("distancia").value;
+unidad = document.getElementsByName("unidades")[0].value;
+urlComp = "segundaWeb.html#" + cant + "#" + unidad;
+
+window.open(urlComp);
+}
+function cargarResultado() {
+var urlComp, can, un;
+
+urlComp = window.location.href.split("/")[5];
+
+can = urlComp.split("#")[1];
+un = urlComp.split("#")[2];
+
+document.getElementById("dist").value = can + " " + un;
 
 }
